@@ -1,0 +1,122 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.clock {
+    position: relative;
+    background-color: rgb(234, 210, 234);
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .7);
+}
+
+img {
+    position: absolute;
+    width: 70px;
+    transform: translateX(-50%);
+    top: 60px;
+    left: 50%;
+    /* it is first on the clock so z index is used 2 */
+    z-index: 2;
+}
+
+.number div {
+    position: absolute;
+    font-size: 27px;
+    font-weight: bold;
+    color: rgb(130, 130, 167);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .8);
+
+}
+
+.twelve {
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6px;
+}
+
+.three {
+    transform: translateY(-50%);
+    top: 50%;
+    right: 6px;
+}
+
+.six {
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 6px;
+}
+
+.nine {
+    transform: translateY(-50%);
+    left: 6px;
+    top: 50%;
+}
+
+/* to create the centre ring at clock before is used */
+.arrows::before {
+    content: "";
+    background-color: rgba(6, 6, 6, 0.824);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .7);
+    /* its is on top so that z-index is 4 */
+    z-index: 4;
+}
+
+.arrows {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrows div {
+    /* background-color:white; */
+    background-color: rgba(14, 10, 10, 0.986);
+    width: 7px;
+    position: absolute;
+    height: 120px;
+    /* to make the oring at centre transform origin is used */
+    transform-origin: bottom center;
+    /* to bring the arrow up 50% is used  */
+    bottom: 50%;
+
+    /* arows are under the centre cirscle at over the image so that z index is 3 used   */
+
+    z-index: 3;
+    border-radius: 50% 50% 0 0;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .7);
+
+}
+
+.arrows .hour {
+    height: 90px;
+    transform: rotate(40deg);
+    background-color: rgb(0, 0, 0);
+}
+
+.arrows .second {
+    transform: rotate(250deg);
+    background-color: rgba(0, 0, 0, 0.842);
+    border-radius: 50% 50% 0 0;
+    width: 3px;
+    height: 110px;
+
+
+}
